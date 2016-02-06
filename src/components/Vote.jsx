@@ -10,6 +10,7 @@ class Vote extends Component {
     return this.props.pair || []
   }
   isDisabled () {
+    console.log(this.props.hasVoted)
     return !!this.props.hasVoted
   }
   hasVotedFor (entry) {
