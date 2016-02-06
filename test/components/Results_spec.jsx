@@ -1,7 +1,7 @@
 import React from 'react/addons'
 import { List, Map } from 'immutable'
 import ReactDOM from 'react-dom'
-import Results from '../../src/components/Results'
+import { Results }from '../../src/components/Results'
 import { expect } from 'chai'
 
 const { renderIntoDocument, scryRenderedDOMComponentsWithClass, Simulate } = React.addons.TestUtils

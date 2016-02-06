@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
 import reactMixin from 'react-mixin'
 import PureRenderMixin from 'react-addons-pure-render-mixin'
+import { connect } from 'react-redux'
 import Winner from './Winner'
 
-class Results extends Component {
+export class Results extends Component {
   constructor(props) {
     super(props)
   }
@@ -45,4 +46,12 @@ class Results extends Component {
 
 reactMixin(Results.prototype, PureRenderMixin)
 
-export default Results
+function mapStateToProps(state) {
+  return {
+    pair: state.getIn(['vote', 'pair']),
+    tally: state.getIn(['vote', 'tally']),
+    winner: state.get('winner')
+  }
+}
+
+export const ResultsContainer = connect(mapStateToProps)(Results)
